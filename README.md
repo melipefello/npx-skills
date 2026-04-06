@@ -14,10 +14,10 @@ Pick what you need — each command downloads a single skill into `.cursor/skill
 
 ```bash
 # The full pipeline
-npx @anthropic/skills install melipefello/npx-skills/interview-me
-npx @anthropic/skills install melipefello/npx-skills/create-a-spec
-npx @anthropic/skills install melipefello/npx-skills/create-a-plan
+npx skills@latest add melipefello/npx-skills/interview-me
+npx skills@latest add melipefello/npx-skills/create-a-spec
+npx skills@latest add melipefello/npx-skills/create-a-plan
 
 # Or just one
-npx @anthropic/skills install melipefello/npx-skills/interview-me
+npx skills@latest add melipefello/npx-skills/interview-me
 ```
