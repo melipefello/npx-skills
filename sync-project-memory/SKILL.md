@@ -10,7 +10,7 @@ Hardlink every `.md` file in the current project's auto-memory folder into `<pro
 ## Quick start
 
 1. Verify cwd is the project root (where you want `Memory/` to live).
-2. Derive the memory-folder slug from the absolute cwd: replace every `:` and every `\` (or `/` on Unix) with `-`. Example: `C:\Root\Experimental\SteamBallGameDocumentation` → `C--Root-Experimental-SteamBallGameDocumentation`.
+2. Derive the memory-folder slug from the absolute cwd: replace every `:` and every `\` (or `/` on Unix) with `-`. Example: `C:\code\my-app` → `C--code-my-app`.
 3. Memory source path: `~/.claude/projects/<slug>/memory/`. On Windows: `C:\Users\<user>\.claude\projects\<slug>\memory\`.
 4. If the memory source folder does not exist, stop and tell the user — there is nothing to sync.
 5. Create `<project-root>/Memory/` if missing.
