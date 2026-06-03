@@ -30,12 +30,13 @@ Session transcripts (JSONL files) are in the parent directory of the memory fold
 
 ## Phases
 
-Work through phases 1-4 in order. See [PHASES.md](PHASES.md) for detailed instructions.
+Work through phases 1-5 in order. See [PHASES.md](PHASES.md) for detailed instructions on phases 1-4.
 
 1. **Orient** — read the memory directory and existing index
 2. **Gather Recent Signal** — find new information worth persisting
 3. **Consolidate** — write or update memory files with proper frontmatter
 4. **Prune and Index** — update MEMORY.md, remove stale entries, stay under 200 lines
+5. **Resync to repo** (project scope only) — invoke `/sync-project-memory` to re-link the project memory into the repo's `Memory/`, repairing hardlinks broken by file writes and tracking newly-created files. Skip for `/dream user` (user-level memory isn't a project repo).
 
 ## Output
 

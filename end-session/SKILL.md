@@ -68,7 +68,7 @@ If any decision is ambiguous or you're unsure how to document it, ask the user N
 
 ## Phase 6 — Produce handoff
 
-Once all documentation is saved, invoke `/handoff` with a summary of:
+Once all documentation is saved, invoke `/sync-project-memory` to re-link the memory folder into the repo's `Memory/` — this repairs any hardlinks broken by file writes and tracks newly-created memory files in git. Then invoke `/handoff` with a summary of:
 
 - What was accomplished this session
 - What the next session should focus on (reference memory files, don't duplicate content)
