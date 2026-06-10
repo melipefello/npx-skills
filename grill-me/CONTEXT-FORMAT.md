@@ -10,7 +10,7 @@
 ## Language
 
 **Order**:
-{A concise description of the term}
+A customer's request to purchase specific products at agreed prices.
 _Avoid_: Purchase, transaction
 
 **Invoice**:

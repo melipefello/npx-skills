@@ -29,7 +29,7 @@ When fetching the diff, mentally discard all files that don't match the reviewab
 
 ### 1. Resolve the PR
 
-- If a PR URL or number: extract PR number, run `gh pr view <number>` to confirm it's open and not a draft.
+- If a PR URL or number: extract PR number, run `gh pr view <number>` to confirm it's open and not a draft. If it's a draft, closed, or already merged, say so and ask whether to proceed anyway before continuing.
 - If a branch comparison: run `git diff <from>...<to> -- '*.cs' '*.asset' '*.json'` to get the diff directly.
 - If nothing provided: `gh pr list` and ask.
 

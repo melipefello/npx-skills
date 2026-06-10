@@ -55,10 +55,11 @@ Run these AFTER all per-author agents have returned. These are lightweight comma
 For each author, build a sorted unique file list, then intersect:
 
 ```bash
-# Build per-author unique file lists
-files_A=$(git log --all --author="Author_A" --since="DATE" --format="" --name-only -- '*.ext' | sort -u)
-files_B=$(git log --all --author="Author_B" --since="DATE" --format="" --name-only -- '*.ext' | sort -u)
-files_C=$(git log --all --author="Author_C" --since="DATE" --format="" --name-only -- '*.ext' | sort -u)
+# Build per-author unique file lists (sed strips the blank lines --format="" emits per commit,
+# which would otherwise survive sort -u and show up as a phantom entry in every intersection)
+files_A=$(git log --all --author="Author_A" --since="DATE" --format="" --name-only -- '*.ext' | sed '/^$/d' | sort -u)
+files_B=$(git log --all --author="Author_B" --since="DATE" --format="" --name-only -- '*.ext' | sed '/^$/d' | sort -u)
+files_C=$(git log --all --author="Author_C" --since="DATE" --format="" --name-only -- '*.ext' | sed '/^$/d' | sort -u)
 
 # Intersect all (3 authors)
 echo "=== Files touched by ALL 3 authors ==="

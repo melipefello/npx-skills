@@ -26,6 +26,8 @@ List `~/.claude/projects/` and match the current working directory to the projec
 
 For **user-level memory**, find the entry in `~/.claude/projects/` that matches just the user's home directory (e.g., `C--Users-YourName`). If ambiguous, ask the user.
 
+If no matching memory directory exists (or it contains no memory files), there is nothing to consolidate — tell the user and stop. Do not create an empty memory structure.
+
 Session transcripts (JSONL files) are in the parent directory of the memory folder. **Index max lines:** 200.
 
 ## Phases

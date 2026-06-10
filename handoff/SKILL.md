@@ -4,7 +4,9 @@ description: Compact the current conversation into a handoff document for anothe
 argument-hint: "What will the next session be used for?"
 ---
 
-Write a handoff document summarising the current conversation so a fresh agent can continue the work. Save it to a path produced by `mktemp -t handoff-XXXXXX.md` (read the file before you write to it).
+Write a handoff document summarising the current conversation so a fresh agent can continue the work. Save it to `.claude/handoff.md` at the project root, overwriting any previous handoff (read the existing file first if one exists). A fixed project-local path means the next session can find it without being told.
+
+If the repo tracks `.claude/` in git, suggest adding `.claude/handoff.md` to `.gitignore` — a handoff is ephemeral session state, not project history.
 
 Suggest the skills to be used, if any, by the next session.
 

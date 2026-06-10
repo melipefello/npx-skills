@@ -21,10 +21,12 @@ Search folders outside the 1-1 directory for the person's name — leadership no
 
 Don't trust stale 1-1 notes about current work. Check memory for repo paths; ask the user once if unknown, then save as a reference memory.
 
+Use the person's full name or email as the author pattern — a bare first name over-matches when two contributors share it. Verify with `git -C {repo} log --all --format="%an <%ae>" | sort -u` if unsure which identity they commit under.
+
 ```bash
-git -C {repo} log --all --author="{firstname}" --since="{last_substantive_1-1_date}" \
+git -C {repo} log --all --author="{full name or email}" --since="{last_substantive_1-1_date}" \
   --pretty="%h | %ad | %s" --date=short
-git -C {repo} log --all --merges --author="{firstname}" --since="..." \
+git -C {repo} log --all --merges --author="{full name or email}" --since="..." \
   --pretty="%h | %ad | %s" --date=short
 ```
 

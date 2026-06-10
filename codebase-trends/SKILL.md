@@ -73,7 +73,7 @@ Write both to the output directory. Open the HTML in the browser.
 ## Critical Implementation Notes
 
 - **Parallel agents are essential.** A single-threaded approach will overflow context with git log output from multiple authors. Each agent handles one author's data in isolation.
-- **Agent prompts must request FULL commit messages** (not truncated). Git's `--format` flag truncates by default in some contexts.
+- **Agent prompts must request FULL commit messages** (not truncated). `%s` is the subject line only — agents must use `git show --no-patch --format="%B" <hash>` when the full body matters.
 - **Escape special characters in paths.** Directories with `!`, spaces, or other shell-special characters need `:(literal)` pathspec or quoting.
 - **The cross-cutting analysis runs AFTER agents return.** It uses lightweight `comm`/`sort -u` commands, not heavy git log queries.
 - **Recommendations must name specific files and counts.** Generic advice like "refactor large files" is useless — the value is in "decompose GearSpawnerController.cs (32 touches across 3 authors)."

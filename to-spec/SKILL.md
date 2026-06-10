@@ -49,9 +49,9 @@ Do NOT include specific file paths or code snippets. They may end up being outda
 
 ## Validation Criteria
 
-A description of how to verify the feature works correctly. Since automated tests are not available, describe:
+A description of how to verify the feature works correctly. If the project has automated tests, name the tests to add or run. For anything tests can't cover (or if the project has no tests), describe:
 
-- What the human should observe when running the game
+- What the human should observe when running the app
 - What behavior confirms the feature is working
 - Edge cases to manually check
 - What error-free logs should look like

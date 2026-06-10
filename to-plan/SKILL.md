@@ -23,7 +23,7 @@ Break the spec into **tracer bullet** slices. Each slice is a thin vertical slic
 
 Slices are classified as either:
 
-- **AFK** — can be implemented by an agent autonomously without human interaction. The agent can verify completion through compilation and log checks.
+- **AFK** — can be implemented by an agent autonomously without human interaction. The agent can verify completion through builds, automated tests, and log checks.
 - **HITL** — requires human interaction, such as visual inspection, feel/tuning judgment, design review, or an architectural decision.
 
 Prefer AFK over HITL where possible.
@@ -68,11 +68,12 @@ Avoid specific file paths or code snippets — they go stale fast.
 ### How to verify
 
 **Agent can check:**
-- [ ] Project compiles with zero errors
+- [ ] Project builds with zero errors
+- [ ] Existing automated tests pass (if the project has them)
 - [ ] No exceptions in logs during basic execution
 
 **Human should verify:**
-- [ ] {What to observe when running the game}
+- [ ] {What to observe when running the app}
 - [ ] {Specific behavior to confirm}
 - [ ] {Edge case to check}
 

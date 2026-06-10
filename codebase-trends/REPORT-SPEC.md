@@ -13,7 +13,8 @@ Where `{since_date}` is the start of the analysis window in `YYYY-MM-DD` format.
 
 After writing both files, open the HTML in the default browser:
 - macOS: `open "path/to/file.html"`
-- Windows: `start "" "path/to/file.html"`
+- Windows (PowerShell): `Invoke-Item "path\to\file.html"`
+- Windows (cmd): `start "" "path\to\file.html"`
 - Linux: `xdg-open "path/to/file.html"`
 
 ## Report Sections
@@ -28,7 +29,7 @@ After writing both files, open the HTML in the default browser:
 - Unique source files touched
 - Files touched by all authors
 - Bug fix ratio (FIX / total)
-- AB tests / config registrations introduced
+- Reverts / multi-pass tickets
 - Dead code LOC removed (if applicable)
 
 ### Table of Contents
