@@ -3,7 +3,7 @@ name: to-spec
 description: Turn the current conversation context into a spec document. Use when user wants to create a spec from the current context.
 ---
 
-This skill takes the current conversation context and codebase understanding and produces a spec. Do NOT interview the user — just synthesize what you already know.
+This skill takes the current conversation context and codebase understanding and produces a spec. Do NOT interview the user — just synthesize what you already know. The single exception is the module-sketch confirmation in step 2.
 
 ## Process
 

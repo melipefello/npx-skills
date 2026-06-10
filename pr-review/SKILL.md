@@ -1,6 +1,6 @@
 ---
 name: pr-review
-description: Review a GitHub PR locally in chat with Unity/C# architecture evaluation. Use when the user wants to review a PR, says "pr-review", or wants architectural feedback on a pull request. Reports findings in chat — never posts comments to GitHub.
+description: Review a Unity/C# GitHub PR locally in chat, with architecture evaluation. Use when the user says "pr-review", or asks for a local Unity/C# review or architectural feedback on a pull request. Reports findings in chat — never posts comments to GitHub.
 argument-hint: "PR URL, PR number, or target branch comparison (e.g. 'develop...feature/my-branch')"
 ---
 
@@ -39,7 +39,7 @@ Launch two subagents in parallel:
 
 **Subagent A — Project guidance**: Find all CLAUDE.md and AGENTS.md files at repo root and in directories touched by the PR. Return the file paths.
 
-**Subagent B — PR summary + filtered diff**: Run `gh pr view <number>` and `gh pr diff <number>`. Filter the diff to only `.cs`, `.asset`, `.json` files. Return a concise summary plus the filtered diff content.
+**Subagent B — PR summary + filtered diff**: Run `gh pr view <number>` and `gh pr diff <number>`. Filter the diff to only `.cs`, `.asset`, `.json` files. Return a concise summary plus the filtered diff content. **Size guard**: if the filtered diff is over ~2000 lines, return the full diff only for the most-changed files, plus a short per-file change summary for the rest.
 
 ### 3. Parallel Code Review (3 specialized agents)
 

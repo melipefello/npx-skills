@@ -21,7 +21,7 @@ created: {{ISO timestamp}}
 # Meeting Prep: 1-1 with {{Name}} — {{meeting date}}
 
 ## Meeting Context
-- **Participant**: [[05-People/{{Name}}]] — {{direct report / peer / skip-level}}
+- **Participant**: [[People/{{Name}}]] — {{direct report / peer / skip-level}}
 - **Last recorded 1-1**: {{date}} ({{"substantive" or "brief / not captured"}})
 - **Session gap**: {{describe — e.g., "3 short sessions in a row — check if there's something to dig into or if things are just running smoothly"}}
 
@@ -47,7 +47,7 @@ created: {{ISO timestamp}}
 {{Anything deferred 3+ times. Provide the REFRAMED phrasing, not the dead one. If a long-deferred topic is now subsumed by a live growth track, anchor it there instead.}}
 
 ### 🧭 Strategic / career — light touch
-{{Only if energy permits. Career direction, pod isolation, cross-pod ambitions.}}
+{{Only if energy permits. Career direction, team isolation, cross-team ambitions.}}
 
 ## General Guiding Questions (silence-killer bench)
 
@@ -121,7 +121,7 @@ Adapt the tone to match the relationship (more casual for established reports, s
 
 ## Template — 1-1 Note (Mode B output)
 
-Based on `02-Areas/Work/Work/1-1/1-1 Template.md`, augmented for post-meeting capture.
+Note template for post-meeting capture. If the vault already has its own 1-1 template, merge with that one instead of replacing it.
 
 ```markdown
 # 1-1 Summary: {{Name}}

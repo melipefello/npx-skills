@@ -33,7 +33,8 @@ For each thing worth remembering, write or update a memory file at the top level
 ---
 name: {{memory name}}
 description: {{one-line description — used to decide relevance in future conversations, so be specific}}
-type: {{user, feedback, project, reference}}
+metadata:
+  type: {{user, feedback, project, reference}}
 ---
 
 {{memory content}}

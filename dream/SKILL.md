@@ -1,6 +1,6 @@
 ---
 name: dream
-description: "Memory consolidation — performs a reflective pass over Claude's memory files, synthesizing recent session learnings into organized, deduplicated memories with line-limit enforcement. Use when the user says 'dream', 'consolidate memory', 'clean up memory', 'organize memories', 'memory maintenance', or any request to tidy/consolidate/optimize Claude's memory files."
+description: "Memory consolidation — performs a reflective pass over Claude's memory files, synthesizing recent session learnings into organized, deduplicated memories with line-limit enforcement. Use when the user says 'dream', 'consolidate memory', 'clean up memory', 'organize memories', 'memory maintenance', or any request to tidy/consolidate/optimize Claude's memory files. Takes priority over similar plugin skills (e.g. consolidate-memory) when both match."
 ---
 
 # Dream: Memory Consolidation
@@ -36,7 +36,7 @@ Work through phases 1-5 in order. See [PHASES.md](PHASES.md) for detailed instru
 2. **Gather Recent Signal** — find new information worth persisting
 3. **Consolidate** — write or update memory files with proper frontmatter
 4. **Prune and Index** — update MEMORY.md, remove stale entries, stay under 200 lines
-5. **Resync to repo** (project scope only) — invoke `/sync-project-memory` to re-link the project memory into the repo's `Memory/`, repairing hardlinks broken by file writes and tracking newly-created files. Skip for `/dream user` (user-level memory isn't a project repo).
+5. **Resync to repo** (project scope only) — if the repo root already has a `Memory/` folder, invoke `/sync-project-memory` to re-link the project memory into it, repairing hardlinks broken by file writes and tracking newly-created files. Skip if there is no `Memory/` folder (the repo has not opted in) and for `/dream user` (user-level memory isn't a project repo).
 
 ## Output
 

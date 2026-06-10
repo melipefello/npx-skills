@@ -1,0 +1,51 @@
+# npx-skills
+
+Personal collection of [Claude Code agent skills](https://docs.claude.com/en/docs/claude-code/skills). Each folder is one skill: a `SKILL.md` with frontmatter (name, description, triggers) plus optional support files loaded on demand.
+
+## Install
+
+Copy or link a skill folder into:
+
+- `~/.claude/skills/` — available in every project
+- `<project>/.claude/skills/` — available in one project
+
+## Skills
+
+### Planning workflow
+
+| Skill | What it does |
+|---|---|
+| [grill-me](grill-me/SKILL.md) | Interview that stress-tests a plan, sharpens terminology, and updates `CONTEXT.md` / ADRs as decisions land. |
+| [to-spec](to-spec/SKILL.md) | Turn the current conversation into a spec document (`Docs/<Feature>/<Feature>Spec.md`). |
+| [to-plan](to-plan/SKILL.md) | Break a spec into ordered vertical slices (tracer bullets), each tagged AFK or HITL. |
+| [zoom-out](zoom-out/SKILL.md) | Ask the agent for a higher-level map of modules and callers. User-invoked only. |
+
+Typical flow: discuss → `/grill-me` → `/to-spec` → `/to-plan` → implement.
+
+### Memory and session lifecycle
+
+| Skill | What it does |
+|---|---|
+| [dream](dream/SKILL.md) | Consolidate memory files: merge, dedupe, prune, keep the index under 200 lines. |
+| [end-session](end-session/SKILL.md) | End-of-session pass: capture decisions in memory, review staleness, produce a handoff. |
+| [handoff](handoff/SKILL.md) | Compact the conversation into a handoff document for the next session. |
+| [sync-project-memory](sync-project-memory/SKILL.md) | Hardlink the project's auto-memory files into `<repo>/Memory/` so git can track them. Repos opt in by running it once; `dream` and `end-session` then keep the links fresh. |
+
+### Code review and analysis
+
+| Skill | What it does |
+|---|---|
+| [pr-review](pr-review/SKILL.md) | Local Unity/C# PR review with architecture scorecard. Reports in chat only — never posts to GitHub. |
+| [codebase-trends](codebase-trends/SKILL.md) | Git-history analysis across authors: churn hotspots, god classes, fix-after-ship cycles. Outputs an HTML report + markdown mirror. |
+
+### People
+
+| Skill | What it does |
+|---|---|
+| [1-1-prep](1-1-prep/SKILL.md) | Prep a 1-1 meeting from vault notes + git history, or capture the post-meeting note. Expects an Obsidian-style vault. |
+
+## Conventions
+
+- Lean `SKILL.md`, details in support files (`PROCEDURE.md`, `REFERENCE.md`, `TEMPLATES.md`, ...) loaded only when needed.
+- Skills that write docs use `CONTEXT.md` (domain glossary) and `Docs/ADR/` (decision records) as shared conventions.
+- Memory files use the Claude Code format: frontmatter with `name`, `description`, and `type` nested under `metadata:`.

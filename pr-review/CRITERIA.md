@@ -13,7 +13,7 @@ Agent #3 must evaluate these dimensions. For each, assign a rating:
 
 | Dimension | What to look for |
 |-----------|-----------------|
-| **Scriptable Data Only** | Are magic numbers, thresholds, or tuning values hardcoded in C# when they should live in a ScriptableObject? Balance data belongs in `Gameplay/Balancing/` SOs, not code. |
+| **Scriptable Data Only** | Are magic numbers, thresholds, or tuning values hardcoded in C# when they should live in a ScriptableObject? Balance data belongs in dedicated balancing ScriptableObjects (follow the project's folder convention), not code. |
 | **Switch Statements** | Are there large switch/case blocks that could be replaced with polymorphism, dictionaries, or data-driven lookups? |
 | **Code Repetition** | Are there duplicated code blocks (3+ similar lines) that should be extracted into a shared method? |
 | **Single Source for Logic Rules** | Is the same business rule expressed in multiple places? Logic rules should have exactly one authoritative source. |

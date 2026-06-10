@@ -41,7 +41,12 @@ New-Item -ItemType Directory -Force $dst | Out-Null
 Get-ChildItem $src -Filter *.md | ForEach-Object {
   $target = Join-Path $dst $_.Name
   if (Test-Path $target) {
-    # already exists — verify same inode via fsutil; skip if so
+    # already exists — check it is still hardlinked to the source
+    $srcNoDrive = $_.FullName.Substring(2)   # fsutil prints paths without the drive letter
+    $links = fsutil hardlink list $target
+    if ($links -notcontains $srcNoDrive) {
+      Write-Warning "$($_.Name) exists in Memory/ but is NOT linked to the source — link broke (editor delete-then-recreate?). Delete it and re-run to re-link."
+    }
     return
   }
   New-Item -ItemType HardLink -Path $target -Target $_.FullName | Out-Null
