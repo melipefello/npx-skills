@@ -32,8 +32,12 @@ Session transcripts (JSONL files) are in the parent directory of the memory fold
 
 ## Phases
 
-Work through phases 1-5 in order. See [PHASES.md](PHASES.md) for detailed instructions on phases 1-4.
+Work through phases 0-5 in order. See [PHASES.md](PHASES.md) for detailed instructions on phases 1-4.
 
+0. **Early-exit check** — before reading anything else, decide if there is new signal at all:
+   - Find when the last consolidation happened: the newest modification time across the memory files (or, if the repo mirrors memory into git, the last commit touching the memory index).
+   - List session transcripts (JSONL, in the parent directory of the memory folder) modified after that time, excluding the current session's own transcript.
+   - If there are none, and the current session itself contains no consolidatable work (e.g. it only ran wrap-up commands), report `Dream: no-op — last consolidation <time>, no new sessions since` and STOP. Do not read every memory file, do not parse transcripts, do not verify mirror links.
 1. **Orient** — read the memory directory and existing index
 2. **Gather Recent Signal** — find new information worth persisting
 3. **Consolidate** — write or update memory files with proper frontmatter

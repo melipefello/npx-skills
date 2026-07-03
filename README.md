@@ -26,7 +26,8 @@ Typical flow: discuss → `/grill-me` → `/to-spec` → `/to-plan` → implemen
 
 | Skill | What it does |
 |---|---|
-| [dream](dream/SKILL.md) | Consolidate memory files: merge, dedupe, prune, keep the index under 200 lines. |
+| [wrap-session](wrap-session/SKILL.md) | One-command closing ritual: `dream` then `end-session`, no handoff by default. |
+| [dream](dream/SKILL.md) | Consolidate memory files: merge, dedupe, prune, keep the index under 200 lines. Early-exits when nothing new happened since the last consolidation. |
 | [end-session](end-session/SKILL.md) | End-of-session pass: capture decisions in memory, review staleness, produce a handoff. |
 | [handoff](handoff/SKILL.md) | Compact the conversation into a handoff document for the next session. |
 | [sync-project-memory](sync-project-memory/SKILL.md) | Hardlink the project's auto-memory files into `<repo>/Memory/` so git can track them. Repos opt in by running it once; `dream` and `end-session` then keep the links fresh. |
