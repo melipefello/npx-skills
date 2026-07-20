@@ -15,12 +15,14 @@ Copy or link a skill folder into:
 
 | Skill | What it does |
 |---|---|
-| [grill-me](grill-me/SKILL.md) | Interview that stress-tests a plan, sharpens terminology, and updates `CONTEXT.md` / ADRs as decisions land. |
-| [to-spec](to-spec/SKILL.md) | Turn the current conversation into a spec document (`Docs/<Feature>/<Feature>Spec.md`). |
-| [to-plan](to-plan/SKILL.md) | Break a spec into ordered vertical slices (tracer bullets), each tagged AFK or HITL. |
+| [grill-me](grill-me/SKILL.md) | Entry point: runs `grilling` with `domain-modeling`, then offers a spec write-up (`Docs/<Feature>/<Feature>Spec.md`). |
+| [grilling](grilling/SKILL.md) | Core relentless interview — one question at a time, facts looked up, decisions asked. Building block for grill-me. |
+| [domain-modeling](domain-modeling/SKILL.md) | Maintains `CONTEXT.md` (glossary + dated decisions log) and `Docs/ADR/` during design sessions. |
 | [zoom-out](zoom-out/SKILL.md) | Ask the agent for a higher-level map of modules and callers. User-invoked only. |
 
-Typical flow: discuss → `/grill-me` → `/to-spec` → `/to-plan` → implement.
+Typical flow: discuss → `/grill-me` → implement.
+
+Upstream tracking: `grilling` and `domain-modeling` are forks of [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/productivity/grilling`, `skills/engineering/domain-modeling`) with small local edits — catch up by diffing each file against its upstream twin. `grill-me` and `SPEC-FORMAT.md` are local-only. `to-spec` and `to-plan` were removed 2026-07 after a usage audit found zero uses in 45 days.
 
 ### Memory and session lifecycle
 

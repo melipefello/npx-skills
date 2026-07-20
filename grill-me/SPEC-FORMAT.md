@@ -1,17 +1,6 @@
----
-name: to-spec
-description: Turn the current conversation context into a spec document. Use when user wants to create a spec from the current context.
----
+# Spec Format
 
-This skill takes the current conversation context and codebase understanding and produces a spec. Do NOT interview the user — just synthesize what you already know. The single exception is the module-sketch confirmation in step 2.
-
-## Process
-
-1. Explore the repo to understand the current state of the codebase, if you haven't already. Use the project's domain glossary vocabulary (from `CONTEXT.md`) throughout the spec, and respect any ADRs in `Docs/ADR/`.
-
-2. Sketch out the major modules you will need to build or modify to complete the implementation. Check with the user that these modules match their expectations.
-
-3. Write the spec using the template below, then save it to `Docs/<FeatureName>/<FeatureName>Spec.md`.
+Synthesize the spec from what the grilling session already established — do NOT start a new interview. Save it to `Docs/<FeatureName>/<FeatureName>Spec.md`.
 
 <spec-template>
 
@@ -46,6 +35,8 @@ A list of implementation decisions that were made. This can include:
 - Specific interactions
 
 Do NOT include specific file paths or code snippets. They may end up being outdated very quickly.
+
+Exception: if a prototype produced a snippet that encodes a decision more precisely than prose can (state machine, reducer, schema, type shape), inline it within the relevant decision and note briefly that it came from a prototype. Trim to the decision-rich parts — not a working demo, just the important bits.
 
 ## Validation Criteria
 
