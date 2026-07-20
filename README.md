@@ -38,6 +38,7 @@ Upstream tracking: `grilling` and `domain-modeling` are forks of [mattpocock/ski
 
 | Skill | What it does |
 |---|---|
+| [pr-desc](pr-desc/SKILL.md) | Generate a PR description for the current branch from the author's stated goal + the diff; `draft` also creates the draft PR. |
 | [pr-review](pr-review/SKILL.md) | Local Unity/C# PR review with architecture scorecard. Reports in chat only — never posts to GitHub. |
 | [codebase-trends](codebase-trends/SKILL.md) | Git-history analysis across authors: churn hotspots, god classes, fix-after-ship cycles. Outputs an HTML report + markdown mirror. |
 
